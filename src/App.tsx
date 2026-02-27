@@ -43,17 +43,25 @@ function App() {
     });
   };
   return (
-    <>
-      <ProductList
-        products={products}
-        addToCart={addToCart}
-        increaseQuantity={increaseQuantity}
-        decreaseQuantity={decreaseQuantity}
-        cart={cart}
-      />
-      <Cart cart={cart} removeItem={removeItem} />
-    </>
+    <div className="page">
+      <h1 className="title">Desserts</h1>
+
+      <div className="layout">
+        <div className="products">
+          <ProductList
+            products={products}
+            addToCart={addToCart}
+            increaseQuantity={increaseQuantity}
+            decreaseQuantity={decreaseQuantity}
+            cart={cart}
+          />
+        </div>
+
+        <aside className="cart">
+          <Cart cart={cart} removeItem={removeItem} />
+        </aside>
+      </div>
+    </div>
   );
 }
-
 export default App;

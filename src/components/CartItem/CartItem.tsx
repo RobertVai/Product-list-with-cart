@@ -1,5 +1,6 @@
 import React from "react";
 import type { CartType } from "../../types/cart";
+import styles from "./CartItem.module.css";
 
 type CartItemProps = {
   item: CartType;
@@ -7,7 +8,7 @@ type CartItemProps = {
 };
 const CartItem = ({ item, removeItem }: CartItemProps) => {
   return (
-    <div>
+    <div className={styles.cartProduct}>
       <p>
         {item.title} x {item.quantity}
       </p>

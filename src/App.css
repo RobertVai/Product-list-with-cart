@@ -1,5 +1,16 @@
-#root {
-  max-width: 1280px;
+.page {
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 40px;
+}
+
+.title {
+  margin: 0 0 24px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 390px;
+  gap: 32px;
+  align-items: start;
 }

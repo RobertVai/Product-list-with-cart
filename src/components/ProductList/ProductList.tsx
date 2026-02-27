@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./ProductList.module.css";
 import type { ProductType } from "../../types/product";
 import type { CartType } from "../../types/cart";
 import ProductCard from "../ProductCard/ProductCard";
@@ -18,7 +19,7 @@ const ProductList = ({
   decreaseQuantity,
 }: ProductListProps) => {
   return (
-    <div>
+    <div className={styles.grid}>
       {products.map((product) => (
         <ProductCard
           key={product.id}

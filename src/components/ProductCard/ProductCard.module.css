@@ -1,0 +1,23 @@
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+
+.title {
+  font-size: 16px;
+  
+}
+
+.category {
+  color: hsl(13, 5%, 61%);
+ 
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(214, 144, 13, 0.87);
+  
+}
