@@ -20,10 +20,20 @@ function App() {
       return updatedCart;
     });
   };
+
+  const removeItem = (id: number) => {
+    setCart((prev) => {
+      return prev.filter((i) => i.id !== id);
+    });
+  };
+
+  const increaseQuantity = (id: number) => {};
+
+  const decreaseQuantity = (id: number) => {};
   return (
     <>
       <ProductList products={products} addToCart={addToCart} />
-      <Cart cart={cart} />
+      <Cart cart={cart} removeItem={removeItem} />
     </>
   );
 }

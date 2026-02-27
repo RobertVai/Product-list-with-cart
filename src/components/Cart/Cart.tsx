@@ -4,12 +4,13 @@ import CartItem from "../CartItem/CartItem";
 
 type CartProps = {
   cart: CartType[];
+  removeItem: (id: number) => void;
 };
-const Cart = ({ cart }: CartProps) => {
+const Cart = ({ cart, removeItem }: CartProps) => {
   return (
     <div>
       {cart.map((item) => (
-        <CartItem key={item.id} item={item} />
+        <CartItem key={item.id} item={item} removeItem={removeItem} />
       ))}
     </div>
   );
