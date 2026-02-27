@@ -27,12 +27,30 @@ function App() {
     });
   };
 
-  const increaseQuantity = (id: number) => {};
+  const increaseQuantity = (id: number) => {
+    setCart((prev) => {
+      return prev
+        .map((i) => (i.id === id ? { ...i, quantity: i.quantity + 1 } : i))
+        .filter((i) => i.quantity > 0);
+    });
+  };
 
-  const decreaseQuantity = (id: number) => {};
+  const decreaseQuantity = (id: number) => {
+    setCart((prev) => {
+      return prev
+        .map((i) => (i.id === id ? { ...i, quantity: i.quantity - 1 } : i))
+        .filter((i) => i.quantity > 0);
+    });
+  };
   return (
     <>
-      <ProductList products={products} addToCart={addToCart} />
+      <ProductList
+        products={products}
+        addToCart={addToCart}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+        cart={cart}
+      />
       <Cart cart={cart} removeItem={removeItem} />
     </>
   );

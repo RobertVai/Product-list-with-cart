@@ -9,6 +9,7 @@ type CartProps = {
 const Cart = ({ cart, removeItem }: CartProps) => {
   return (
     <div>
+      {cart.length === 0 && "Empty cart"}
       {cart.map((item) => (
         <CartItem key={item.id} item={item} removeItem={removeItem} />
       ))}
