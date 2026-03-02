@@ -23,20 +23,33 @@ const ProductCard = ({
   return (
     <div>
       <img src={product.image} alt="" className={styles.image} />
+      {checkQuantity === 0 ? (
+        <button className={styles.addButton} onClick={() => addToCart(product)}>
+          <img src="images\icon-add-to-cart.svg" alt="" />
+          Add to Cart
+        </button>
+      ) : (
+        <div className={styles.counter}>
+          <button
+            className={styles.addButton}
+            onClick={() => decreaseQuantity(product.id)}
+          >
+            -
+          </button>
+          <p>{checkQuantity}</p>
+          <button
+            className={styles.addButton}
+            onClick={() => increaseQuantity(product.id)}
+          >
+            +
+          </button>
+        </div>
+      )}
       <div className={styles.dessertInfo}>
         <p className={styles.category}>{product.category}</p>
         <strong className={styles.title}>{product.title}</strong>
         <p className={styles.price}>${product.price}</p>
       </div>
-      {checkQuantity === 0 ? (
-        <button onClick={() => addToCart(product)}>ADD</button>
-      ) : (
-        <div>
-          <button onClick={() => decreaseQuantity(product.id)}>-</button>
-          <span>{checkQuantity}</span>
-          <button onClick={() => increaseQuantity(product.id)}>+</button>
-        </div>
-      )}
     </div>
   );
 };

@@ -3,21 +3,37 @@
   height: auto;
   display: block;
   border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .title {
   font-size: 16px;
-  
 }
 
 .category {
   color: hsl(13, 5%, 61%);
- 
 }
 
 .price {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: rgba(214, 144, 13, 0.87);
-  
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0a0000;
+  border-radius: 5rem;
+  padding: 10px 20px;
+  position: relative;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.counter {
+  display: flex;
+  align-items: center;
 }

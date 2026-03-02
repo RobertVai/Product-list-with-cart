@@ -1,3 +1,39 @@
 .cartProduct {
   display: flex;
+  justify-content: space-between;
+  padding-top: 0.7rem;
+  border-bottom: 1px solid hsl(14, 25%, 72%);
+}
+
+.dessertTitle {
+  color: hsl(14, 65%, 9%);
+  font-size: 14px;
+}
+
+.dessertQuantity {
+  color: orange;
+}
+.cartInfo {
+  padding-top: 1rem;
+}
+.removeButton {
+  background: none;
+  border-radius: 90%;
+  border: 1px solid hsl(14, 25%, 72%);
+  align-self: center;
+  padding: 0px 2px;
+  cursor: pointer;
+}
+
+.finalInfo {
+  display: flex;
+  gap: 1rem;
+}
+
+.dessertPrice {
+  color: hsl(14, 25%, 72%);
+}
+
+.dessertTotalPrice {
+  color: hsl(7, 20%, 60%);
 }

@@ -9,11 +9,23 @@ type CartItemProps = {
 const CartItem = ({ item, removeItem }: CartItemProps) => {
   return (
     <div className={styles.cartProduct}>
-      <p>
-        {item.title} x {item.quantity}
-      </p>
-      <p>{item.quantity * item.price}</p>
-      <button onClick={() => removeItem(item.id)}>X</button>
+      <div className={styles.cartInfo}>
+        <strong className={styles.dessertTitle}>{item.title}</strong>
+        <div className={styles.finalInfo}>
+          <strong className={styles.dessertQuantity}>{item.quantity}x</strong>
+          <p className={styles.dessertPrice}>@${item.price}</p>
+          <strong className={styles.dessertTotalPrice}>
+            ${item.quantity * item.price}
+          </strong>
+        </div>
+      </div>
+
+      <button
+        className={styles.removeButton}
+        onClick={() => removeItem(item.id)}
+      >
+        <img src="images\icon-remove-item.svg" alt="" />
+      </button>
     </div>
   );
 };
