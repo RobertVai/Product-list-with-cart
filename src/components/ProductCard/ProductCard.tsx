@@ -31,17 +31,25 @@ const ProductCard = ({
       ) : (
         <div className={styles.counter}>
           <button
-            className={styles.addButton}
+            className={styles.quantityButton}
             onClick={() => decreaseQuantity(product.id)}
           >
-            -
+            <img
+              src="images\icon-decrement-quantity.svg"
+              alt=""
+              className={styles.changeQuantity}
+            />
           </button>
           <p>{checkQuantity}</p>
           <button
-            className={styles.addButton}
+            className={styles.quantityButton}
             onClick={() => increaseQuantity(product.id)}
           >
-            +
+            <img
+              src="images\icon-increment-quantity.svg"
+              alt=""
+              className={styles.changeQuantity}
+            />
           </button>
         </div>
       )}

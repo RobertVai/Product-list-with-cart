@@ -42,6 +42,15 @@ function App() {
         .filter((i) => i.quantity > 0);
     });
   };
+
+  const totalPrice = cart.reduce((total, i) => {
+    return total + i.price * i.quantity;
+  }, 0);
+
+  const totalItems = cart.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+
   return (
     <div className="page">
       <h1 className="title">Desserts</h1>
@@ -58,7 +67,12 @@ function App() {
         </div>
 
         <aside className="cart">
-          <Cart cart={cart} removeItem={removeItem} />
+          <Cart
+            cart={cart}
+            removeItem={removeItem}
+            totalPrice={totalPrice}
+            totalItems={totalItems}
+          />
         </aside>
       </div>
     </div>

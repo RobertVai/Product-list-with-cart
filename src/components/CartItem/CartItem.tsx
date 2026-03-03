@@ -13,9 +13,9 @@ const CartItem = ({ item, removeItem }: CartItemProps) => {
         <strong className={styles.dessertTitle}>{item.title}</strong>
         <div className={styles.finalInfo}>
           <strong className={styles.dessertQuantity}>{item.quantity}x</strong>
-          <p className={styles.dessertPrice}>@${item.price}</p>
+          <p className={styles.dessertPrice}>@${item.price.toFixed(2)}</p>
           <strong className={styles.dessertTotalPrice}>
-            ${item.quantity * item.price}
+            ${(item.quantity * item.price).toFixed(2)}
           </strong>
         </div>
       </div>
