@@ -6,10 +6,17 @@ import styles from "./Cart.module.css";
 type CartProps = {
   cart: CartType[];
   removeItem: (id: number) => void;
+  openModal: () => void;
   totalPrice: number;
   totalItems: number;
 };
-const Cart = ({ cart, removeItem, totalPrice, totalItems }: CartProps) => {
+const Cart = ({
+  cart,
+  removeItem,
+  openModal,
+  totalPrice,
+  totalItems,
+}: CartProps) => {
   return (
     <div className={styles.cart}>
       <h1>Your Cart({totalItems})</h1>
@@ -41,7 +48,9 @@ const Cart = ({ cart, removeItem, totalPrice, totalItems }: CartProps) => {
               This is <b className={styles.carbon}>carbon-neutral</b> delivery
             </p>
           </div>
-          <button className={styles.confirmOrder}>Confirm Order</button>
+          <button onClick={openModal} className={styles.confirmOrder}>
+            Confirm Order
+          </button>
         </div>
       )}
     </div>

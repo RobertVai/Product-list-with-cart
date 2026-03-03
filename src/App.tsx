@@ -5,9 +5,11 @@ import type { CartType } from "./types/cart";
 import { products } from "./data/products";
 import ProductList from "./components/ProductList/ProductList";
 import Cart from "./components/Cart/Cart";
+import Modal from "./components/Modal/Modal";
 
 function App() {
   const [cart, setCart] = useState<CartType[]>([]);
+  const [modal, setModal] = useState(false);
 
   const addToCart = (product: ProductType) => {
     setCart((prev) => {
@@ -51,6 +53,10 @@ function App() {
     return sum + item.quantity;
   }, 0);
 
+  const clearCart = () => setCart([]);
+  const openModal = () => setModal(true);
+  const closeModal = () => setModal(false);
+
   return (
     <div className="page">
       <h1 className="title">Desserts</h1>
@@ -72,7 +78,16 @@ function App() {
             removeItem={removeItem}
             totalPrice={totalPrice}
             totalItems={totalItems}
+            openModal={openModal}
           />
+          {modal && (
+            <Modal
+              cart={cart}
+              totalPrice={totalPrice}
+              closeModal={closeModal}
+              clearCart={clearCart}
+            />
+          )}
         </aside>
       </div>
     </div>
