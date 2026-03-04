@@ -3,3 +3,16 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
 }
+
+@media (max-width: 1050px) {
+  .grid {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+
+@media (max-width: 699px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+  }
+}

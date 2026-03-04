@@ -68,3 +68,12 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 775px) {
+  .addButton {
+    padding: 5px 10px;
+  }
+  .counter {
+    padding: 5px 10px;
+  }
+}
